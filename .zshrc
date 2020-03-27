@@ -85,8 +85,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 fpath=(/usr/local/share/zsh-completions $fpath)
-source <(kubectl completion zsh)
-source <(minikube completion zsh)
+# source <(kubectl completion zsh)
+# source <(minikube completion zsh)
 
 # fix keypad on apple usb keyboard for macOS Sierra 10.14
 
