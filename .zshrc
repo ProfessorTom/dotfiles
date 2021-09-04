@@ -1,6 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# completions must be done early
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/tomasgallucci/.oh-my-zsh
 
@@ -55,6 +60,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+zmodload -i zsh/complist
+autoload -U +X bashcompinit && bashcompinit
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -87,6 +95,10 @@ source $ZSH/oh-my-zsh.sh
 fpath=(/usr/local/share/zsh-completions $fpath)
 # source <(kubectl completion zsh)
 # source <(minikube completion zsh)
+
+
+eval "`pip completion --zsh`"
+compctl -K _pip_completion pip3
 
 # fix keypad on apple usb keyboard for macOS Sierra 10.14
 
