@@ -107,6 +107,8 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # syntax highlighting for cat alias
 alias ccat='highlight -O ansi'
 
+# alias `thefuck` to `fuck`
+eval $(thefuck --alias)
 
 eval "`pip completion --zsh`"
 compctl -K _pip_completion pip3
