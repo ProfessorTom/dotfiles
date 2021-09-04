@@ -104,6 +104,9 @@ export NVM_DIR="$HOME/.nvm"
 # highlight command sytand while typing
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# syntax highlighting for cat alias
+alias ccat='highlight -O ansi'
+
 
 eval "`pip completion --zsh`"
 compctl -K _pip_completion pip3
